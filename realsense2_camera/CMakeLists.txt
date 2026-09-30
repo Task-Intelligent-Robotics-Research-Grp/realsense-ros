@@ -330,7 +330,7 @@ if(USE_LIFECYCLE_NODE)
     find_package(rclcpp_lifecycle REQUIRED)
     find_package(lifecycle_msgs REQUIRED)
     list(APPEND dependencies rclcpp_lifecycle lifecycle_msgs)
-    list(APPEND targets 
+    list(APPEND targets
         rclcpp_lifecycle::rclcpp_lifecycle
         lifecycle_msgs::lifecycle_msgs__rosidl_typesupport_cpp)
     add_definitions(-DUSE_LIFECYCLE_NODE)
@@ -422,13 +422,19 @@ install(
 )
 
 # Install launch files
-install(DIRECTORY 
+install(DIRECTORY
     launch
     DESTINATION share/${PROJECT_NAME}
     )
 
+# Install config files
+install(DIRECTORY
+    config
+    DESTINATION share/${PROJECT_NAME}
+    )
+
 # Install example files
-install(DIRECTORY 
+install(DIRECTORY
     examples
     DESTINATION share/${PROJECT_NAME}
 )

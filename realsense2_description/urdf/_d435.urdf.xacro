@@ -23,8 +23,8 @@ aluminum peripherial evaluation case.
 
 <robot name="sensor_d435" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Includes -->
-  <xacro:include filename="$(find realsense2_description)/urdf/_materials.urdf.xacro" />
-  <xacro:include filename="$(find realsense2_description)/urdf/_usb_plug.urdf.xacro" />
+  <!-- <xacro:include filename="$(find realsense2_description)/urdf/_materials.urdf.xacro" /> -->
+  <!-- <xacro:include filename="$(find realsense2_description)/urdf/_usb_plug.urdf.xacro" /> -->
 
   <xacro:macro name="sensor_d435" params="parent *origin name:=camera use_nominal_extrinsics:=false add_plug:=false use_mesh:=true">
     <xacro:property name="M_PI" value="3.1415926535897931" />
@@ -83,8 +83,8 @@ aluminum peripherial evaluation case.
           <geometry>
             <box size="${d435_cam_depth} ${d435_cam_width} ${d435_cam_height}"/>
           </geometry>
-          <material name="aluminum"/>
-        </xacro:unless>     
+          <!-- <material name="aluminum"/> -->
+        </xacro:unless>
       </visual>
       <collision>
         <origin xyz="0 ${-d435_cam_depth_py} 0" rpy="0 0 0"/>
